@@ -1,0 +1,89 @@
+{
+  "name": "@edh/edh-js.js",
+  "version": "0.1.0",
+  "description": "Package to include EDH api within react context",
+  "main": "dist/edh-js.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint lib/*.jsx",
+    "prepublish": "npm run build",
+    "prepush": "npm run lint && npm run test:coverage",
+    "start": "cross-env ./node_modules/.bin/webpack-dev-server --static example/",
+    "prettier-watch": "onchange '**/*.js' '**/*.jsx' -- prettier --write {{changed}}",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "test": "./node_modules/.bin/mocha tests/helpers/setup.js tests/**/*.spec.js --require @babel/register",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "nyc npm test",
+    "build:dev": "cross-env \"./node_modules/.bin/webpack\" --config webpack.config.js",
+    "build": "cross-env \"./node_modules/.bin/webpack\" --config webpack.config.prod.js",
+    "analyze": "BUNDLE_ANALYZE=true ./node_modules/.bin/webpack --config webpack.config.prod.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "nyc": {
+    "function": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ],
+    "extension": [
+      ".jsx"
+    ]
+  },
+  "keywords": [
+    "react"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-arrow-functions": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/register": "^7.0.0",
+    "@webpack-cli/serve": "^1.6.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "chai": "4.3.6",
+    "clean-webpack-plugin": "^0.1.16",
+    "codecov": "^3.1.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "4.3.0",
+    "enzyme": "3.11.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "3.1.0",
+    "husky": "7.0.4",
+    "jsdom": "19.0.0",
+    "mocha": "10.0.0",
+    "nyc": "15.1.0",
+    "react-test-renderer": "^17.0.0",
+    "sinon": "13.0.2",
+    "style-loader": "2.0.0",
+    "styled-components": "^4.1.3",
+    "webpack": "5.72.0",
+    "webpack-bundle-analyzer": "4.5.0",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "^6.2.1",
+    "styled-components": "^5.3.3",
+    "underscore": "^1.8.3"
+  }
+}
