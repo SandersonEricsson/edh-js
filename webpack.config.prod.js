@@ -1,5 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
@@ -24,9 +25,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'edh-js.js',
+    filename: 'react-edh-js.js',
     publicPath: 'dist/',
-    library: '@edh/edh-js',
+    library: '@edh/react-edh-js',
     libraryTarget: 'umd',
     globalObject: "typeof self !== 'undefined' ? self : this"
   },
