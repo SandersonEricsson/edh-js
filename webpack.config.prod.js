@@ -27,7 +27,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'react-edh-js.js',
     publicPath: 'dist/',
-    library: '@edh/react-edh-js',
+    library: '@edhsdk/react-edh-js',
     libraryTarget: 'umd',
     globalObject: "typeof self !== 'undefined' ? self : this"
   },

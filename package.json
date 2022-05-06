@@ -1,5 +1,5 @@
 {
-  "name": "@edh/react-edh-js",
+  "name": "@edhsdk/react-edh-js",
   "version": "0.1.0",
   "description": "Package to include EDH api within react context",
   "main": "dist/react-edh-js",
