@@ -1,6 +1,6 @@
 {
-  "name": "@edhsdk/react-edh-js",
-  "version": "0.1.0",
+  "name": "@edh/react-edh-js",
+  "version": "0.1.1",
   "description": "Package to include EDH api within react context",
   "main": "dist/react-edh-js",
   "scripts": {
@@ -38,6 +38,14 @@
   "keywords": [
     "react"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SandersonEricsson/edh-js"
+  },
+  "bugs": {
+    "url": "https://github.com/SandersonEricsson/edh-js/issues"
+  },
+  "homepage": "https://docs.digitalhumansdk.com/",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
