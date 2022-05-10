@@ -51,43 +51,63 @@ class Example extends React.Component{
 
     render() {
 
+        /*
+        const style = {
+            top: 0,
+            left: 0,
+            objectFit: "fill",
+            width: "100vw",
+            maxWidth: "100%",
+            height: "100vh",
+            maxHeight: "100%",
+            zIndex: 1,
+        }
+        */
+
+        
+
+
         return(
-            <DigitalHuman
-                token={""}
-                steps={[
-                        {
-                        id: '1',
-                        message: 'Hello I am Jesse.',
-                        trigger: "2"
-                        },
-                        {
-                        id: '2',
-                        message: 'I am a Digital Assistant who work with your business.',
-                        trigger: "3"
-                        },
-                        {
-                        id: '3',
-                        message: 'Let me know if there is anything else I can help you with.',
-                        trigger: "4"
-                        },
-                        {
-                        id: '4',
-                        trigger: null
-                        },
-                    ]}
-                style={{
-                        top: 0,
-                        left: 0,
-                        objectFit: "fill",
-                        width: "100vw",
-                        maxWidth: "100%",
-                        height: "100vh",
-                        maxHeight: "100%",
-                        zIndex: 1,
-                    }}
-                avatar={"male_01_m"}
-                currStep={this.state.currStep}
-                onCurrStepTrigger={this.myTalkingFinishedAsyncCallback} />
+            <div // this outer div is <App />
+            style={{
+                width: "75vw",
+                height: "75vh",
+                display: "flex",
+                flex: "1 1 auto",
+                flexDirection: "row",
+                alignItems: "stretch",
+                backgroundColor: "blue"
+            }}
+            >
+                <DigitalHuman
+                    token={""}
+                    steps={[
+                            {
+                            id: '1',
+                            message: 'Hello I am Jesse.',
+                            trigger: "2"
+                            },
+                            {
+                            id: '2',
+                            message: 'I am a Digital Assistant who work with your business.',
+                            trigger: "3"
+                            },
+                            {
+                            id: '3',
+                            message: 'Let me know if there is anything else I can help you with.',
+                            trigger: "4"
+                            },
+                            {
+                            id: '4',
+                            trigger: null
+                            },
+                        ]}
+                    style={{flex: "1",
+                            backgroundColor: "green"}}
+                    avatar={"male_01_m"}
+                    currStep={this.state.currStep}
+                    onCurrStepTrigger={this.myTalkingFinishedAsyncCallback} />
+            </div>
         )
     }
 }
