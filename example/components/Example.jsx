@@ -104,7 +104,7 @@ class Example extends React.Component{
                         ]}
                     style={{flex: "1",
                             backgroundColor: "green"}}
-                    avatar={"male_01_m"}
+                    human={"s_m_f_01"}
                     currStep={this.state.currStep}
                     onCurrStepTrigger={this.myTalkingFinishedAsyncCallback} />
             </div>
